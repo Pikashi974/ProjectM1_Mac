@@ -1,7 +1,7 @@
 //
 //  ViewController.swift
 //  ProjectM1
-//
+//https://stackoverflow.com/questions/33090812/xcode-swift-how-do-i-split-an-image
 //  Created by etudiant on 08/11/2018.
 //  Copyright © 2018 etudiant. All rights reserved.
 //
