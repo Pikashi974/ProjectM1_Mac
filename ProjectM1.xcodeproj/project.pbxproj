@@ -14,6 +14,7 @@
 		ECCF4A1A219449E8000C2C85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECCF4A18219449E8000C2C85 /* LaunchScreen.storyboard */; };
 		ECCF4A25219449E8000C2C85 /* ProjectM1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF4A24219449E8000C2C85 /* ProjectM1Tests.swift */; };
 		ECCF4A30219449E8000C2C85 /* ProjectM1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF4A2F219449E8000C2C85 /* ProjectM1UITests.swift */; };
+		ECCF4A3E2194748D000C2C85 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF4A3D2194748D000C2C85 /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		ECCF4A2B219449E8000C2C85 /* ProjectM1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectM1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECCF4A2F219449E8000C2C85 /* ProjectM1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectM1UITests.swift; sourceTree = "<group>"; };
 		ECCF4A31219449E8000C2C85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECCF4A3D2194748D000C2C85 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				ECCF4A0F219449E8000C2C85 /* AppDelegate.swift */,
 				ECCF4A11219449E8000C2C85 /* ViewController.swift */,
+				ECCF4A3D2194748D000C2C85 /* PhotoViewController.swift */,
 				ECCF4A13219449E8000C2C85 /* Main.storyboard */,
 				ECCF4A16219449E8000C2C85 /* Assets.xcassets */,
 				ECCF4A18219449E8000C2C85 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				ECCF4A12219449E8000C2C85 /* ViewController.swift in Sources */,
 				ECCF4A10219449E8000C2C85 /* AppDelegate.swift in Sources */,
+				ECCF4A3E2194748D000C2C85 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
