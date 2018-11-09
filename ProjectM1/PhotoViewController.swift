@@ -10,15 +10,7 @@ import UIKit
 
 class PhotoViewController: UIViewController {
 
-    var takenPhoto: UIImage?
     
-    @IBOutlet weak var imageView: UIImageView!
-    
-    @IBAction func cancelButton_touchUpInside(_ sender: Any) {
-    }
-    
-    @IBAction func saveButton_touchUpInside(_ sender: Any) {
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

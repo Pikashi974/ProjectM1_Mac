@@ -75,15 +75,14 @@
                                 <rect key="frame" x="16" y="94" width="343" height="30"/>
                                 <state key="normal" title="Prendre une photo"/>
                                 <connections>
-                                    <action selector="camerabuttonaction:" destination="CLr-yV-vTp" eventType="touchUpInside" id="lP6-Lv-8j1"/>
-                                    <action selector="takePhoto:" destination="CLr-yV-vTp" eventType="touchUpInside" id="OG2-MB-XUh"/>
+                                    <action selector="takePhoto:" destination="CLr-yV-vTp" eventType="touchUpInside" id="xTb-RI-26O"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tml-sF-FHL">
                                 <rect key="frame" x="16" y="140" width="343" height="30"/>
                                 <state key="normal" title="Utiliser une image existante"/>
                                 <connections>
-                                    <action selector="photolibraryaction:" destination="CLr-yV-vTp" eventType="touchUpInside" id="cqN-AR-VVN"/>
+                                    <action selector="photolibraryaction:" destination="CLr-yV-vTp" eventType="touchUpInside" id="eLa-f5-7JP"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choix de l'image du puzzle :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="em9-bF-ThS">
@@ -151,10 +150,10 @@
             </objects>
             <point key="canvasLocation" x="1501.5999999999999" y="117.39130434782609"/>
         </scene>
-        <!--Photo View Controller-->
+        <!--View Controller-->
         <scene sceneID="8fL-Qg-YdM">
             <objects>
-                <viewController id="OOp-vz-fKf" customClass="PhotoViewController" customModule="ProjectM1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OOp-vz-fKf" customClass="ViewController" customModule="ProjectM1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gvO-Rv-gwo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,6 +180,7 @@
                                         </state>
                                         <connections>
                                             <action selector="saveButton_touchUpInside:" destination="OOp-vz-fKf" eventType="touchUpInside" id="ibh-IW-rtT"/>
+                                            <action selector="saveaction:" destination="OOp-vz-fKf" eventType="touchUpInside" id="smM-bA-R8Z"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -206,6 +206,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jzp-PY-BXR"/>
                     </view>
+                    <connections>
+                        <outlet property="pickedImaged" destination="7Vh-1O-NIo" id="E06-aw-FuF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5H-Ca-9JW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
