@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC6CA7942195AB9E00D206B6 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6CA7932195AB9E00D206B6 /* PreviewViewController.swift */; };
 		ECCF4A10219449E8000C2C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF4A0F219449E8000C2C85 /* AppDelegate.swift */; };
 		ECCF4A12219449E8000C2C85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF4A11219449E8000C2C85 /* ViewController.swift */; };
 		ECCF4A15219449E8000C2C85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECCF4A13219449E8000C2C85 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC6CA7932195AB9E00D206B6 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		ECCF4A0C219449E7000C2C85 /* ProjectM1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectM1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECCF4A0F219449E8000C2C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECCF4A11219449E8000C2C85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				ECCF4A16219449E8000C2C85 /* Assets.xcassets */,
 				ECCF4A18219449E8000C2C85 /* LaunchScreen.storyboard */,
 				ECCF4A1B219449E8000C2C85 /* Info.plist */,
+				EC6CA7932195AB9E00D206B6 /* PreviewViewController.swift */,
 			);
 			path = ProjectM1;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				ECCF4A12219449E8000C2C85 /* ViewController.swift in Sources */,
 				ECCF4A10219449E8000C2C85 /* AppDelegate.swift in Sources */,
 				ECCF4A3E2194748D000C2C85 /* PhotoViewController.swift in Sources */,
+				EC6CA7942195AB9E00D206B6 /* PreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

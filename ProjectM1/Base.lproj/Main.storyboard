@@ -76,6 +76,7 @@
                                 <state key="normal" title="Prendre une photo"/>
                                 <connections>
                                     <action selector="camerabuttonaction:" destination="CLr-yV-vTp" eventType="touchUpInside" id="lP6-Lv-8j1"/>
+                                    <action selector="takePhoto:" destination="CLr-yV-vTp" eventType="touchUpInside" id="OG2-MB-XUh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tml-sF-FHL">
@@ -106,15 +107,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tfp-uh-cst"/>
                     </view>
+                    <connections>
+                        <segue destination="Krr-8K-sh8" kind="presentation" identifier="GoToView" id="fgt-HN-mME"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhu-Pf-jcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793" y="118"/>
+            <point key="canvasLocation" x="799" y="118"/>
         </scene>
-        <!--View Controller-->
+        <!--Preview View Controller-->
         <scene sceneID="gB9-77-mpr">
             <objects>
-                <viewController id="Krr-8K-sh8" sceneMemberID="viewController">
+                <viewController id="Krr-8K-sh8" customClass="PreviewViewController" customModule="ProjectM1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lac-zP-MFj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,35 +126,90 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9O-8v-vS4">
                                 <rect key="frame" x="157" y="587" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cameraButton_TouchUpInside:" destination="Krr-8K-sh8" eventType="touchUpInside" id="gwO-xu-dR7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="d8T-Dh-BDp"/>
                     </view>
+                    <connections>
+                        <segue destination="OOp-vz-fKf" kind="presentation" identifier="showView" id="66V-SJ-LVQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lG2-L5-etd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1501.5999999999999" y="117.39130434782609"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo View Controller-->
         <scene sceneID="8fL-Qg-YdM">
             <objects>
-                <viewController id="OOp-vz-fKf" sceneMemberID="viewController">
+                <viewController id="OOp-vz-fKf" customClass="PhotoViewController" customModule="ProjectM1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gvO-Rv-gwo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Vh-1O-NIo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t7W-x4-Kho">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7O-5O-JW1">
+                                        <rect key="frame" x="32" y="24" width="48" height="30"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButton_touchUpInside:" destination="OOp-vz-fKf" eventType="touchUpInside" id="eII-bL-A82"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWf-Ks-YRV">
+                                        <rect key="frame" x="309" y="24" width="34" height="30"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButton_touchUpInside:" destination="OOp-vz-fKf" eventType="touchUpInside" id="ibh-IW-rtT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="k7O-5O-JW1" secondAttribute="bottom" constant="24" id="Jxf-UO-ICE"/>
+                                    <constraint firstItem="k7O-5O-JW1" firstAttribute="top" secondItem="t7W-x4-Kho" secondAttribute="top" constant="24" id="NFc-q1-viB"/>
+                                    <constraint firstAttribute="bottom" secondItem="eWf-Ks-YRV" secondAttribute="bottom" constant="24" id="XSp-I0-W4g"/>
+                                    <constraint firstItem="k7O-5O-JW1" firstAttribute="leading" secondItem="t7W-x4-Kho" secondAttribute="leading" constant="32" id="suo-P9-nrY"/>
+                                    <constraint firstItem="eWf-Ks-YRV" firstAttribute="top" secondItem="t7W-x4-Kho" secondAttribute="top" constant="24" id="v3F-rR-OyB"/>
+                                    <constraint firstAttribute="trailing" secondItem="eWf-Ks-YRV" secondAttribute="trailing" constant="32" id="yfx-3m-AbP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7Vh-1O-NIo" firstAttribute="top" secondItem="gvO-Rv-gwo" secondAttribute="top" id="HQe-2L-BOh"/>
+                            <constraint firstItem="7Vh-1O-NIo" firstAttribute="leading" secondItem="jzp-PY-BXR" secondAttribute="leading" id="KCJ-gw-ska"/>
+                            <constraint firstItem="t7W-x4-Kho" firstAttribute="leading" secondItem="jzp-PY-BXR" secondAttribute="leading" id="sFA-86-9un"/>
+                            <constraint firstItem="jzp-PY-BXR" firstAttribute="trailing" secondItem="7Vh-1O-NIo" secondAttribute="trailing" id="uu1-hK-5GF"/>
+                            <constraint firstItem="jzp-PY-BXR" firstAttribute="bottom" secondItem="7Vh-1O-NIo" secondAttribute="bottom" id="wBN-sm-73V"/>
+                            <constraint firstItem="jzp-PY-BXR" firstAttribute="trailing" secondItem="t7W-x4-Kho" secondAttribute="trailing" id="wfO-OU-BUO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jzp-PY-BXR"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5H-Ca-9JW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2194" y="117"/>
+            <point key="canvasLocation" x="2194.4000000000001" y="117.39130434782609"/>
         </scene>
     </scenes>
 </document>
