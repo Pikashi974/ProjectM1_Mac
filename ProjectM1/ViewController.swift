@@ -32,14 +32,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate , UINavig
         // Dispose of any resources that can be recreated.
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            myImg.contentMode = .scaleToFill
-            myImg.image = pickedImage
-        }
-        picker.dismiss(animated: true, completion: nil)
-    }
     
+    @IBAction func retour(_ sender: Any) {
+        performSegue(withIdentifier: "back", sender: nil)
+    }
     
     
     @IBAction func photolibraryaction(_ sender: UIButton) {
@@ -54,25 +50,12 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate , UINavig
         
     }
     
-    @IBAction func saveaction(_ sender: UIButton) {
-        
-        let imageData = UIImageJPEGRepresentation(pickedImaged.image!, 0.6)
-        let compressedJPEGImage = UIImage(data: imageData!)
-        UIImageWriteToSavedPhotosAlbum(compressedJPEGImage!, nil, nil, nil)
-        saveNotice()
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!){
-        pickedImaged.image = image
-        self.dismiss(animated: true, completion: nil);
-    }
-    
-    
-    func saveNotice(){
-        let alertController = UIAlertController(title: "Image Saved!", message: "Your picture was successfully saved.", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(defaultAction)
-        present(alertController, animated: true, completion: nil)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        myImg.contentMode = .scaleToFill
+        myImg.image = pickedImage
+        }
+        picker.dismiss(animated: true, completion: nil)
     }
     
     var takenPhoto: UIImage?
@@ -84,6 +67,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate , UINavig
     }
     
     @IBAction func saveButton_touchUpInside(_ sender: Any) {
+        performSegue(withIdentifier: "Mosaique", sender: nil)
     }
     
 }
