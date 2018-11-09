@@ -65,7 +65,7 @@
         <!--View Controller-->
         <scene sceneID="Wsb-cz-sRf">
             <objects>
-                <viewController id="CLr-yV-vTp" sceneMemberID="viewController">
+                <viewController id="CLr-yV-vTp" customClass="ViewController" customModule="ProjectM1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a6P-pu-bDm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,12 +80,16 @@
                                 <rect key="frame" x="16" y="77.5" width="343" height="30"/>
                                 <state key="normal" title="Prendre une photo"/>
                                 <connections>
+                                    <action selector="camerabuttonaction:" destination="CLr-yV-vTp" eventType="touchUpInside" id="lP6-Lv-8j1"/>
                                     <segue destination="bPl-Ny-lVC" kind="show" id="YQR-fN-tnw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tml-sF-FHL">
                                 <rect key="frame" x="16" y="123.5" width="343" height="30"/>
                                 <state key="normal" title="Utiliser une image existante"/>
+                                <connections>
+                                    <action selector="photolibraryaction:" destination="CLr-yV-vTp" eventType="touchUpInside" id="cqN-AR-VVN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -114,20 +118,31 @@
                     <view key="view" contentMode="scaleToFill" id="w4T-eN-Aon">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GZm-Dz-F29">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4YN-0U-emI"/>
                     </view>
                     <navigationItem key="navigationItem" id="5rj-TD-sXT">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Luh-4z-oyz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Luh-4z-oyz" customClass="UiButton">
                             <connections>
-                                <action selector="takePhoto:" destination="bLx-0U-TaE" id="VPO-0c-vlM"/>
+                                <action selector="saveaction:" destination="bLx-0U-TaE" id="1Lu-B8-Wc1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="Capture" destination="Luh-4z-oyz" id="x4Q-Je-dxc"/>
+                        <outlet property="Save" destination="Luh-4z-oyz" id="hcE-zp-ncY"/>
+                        <outlet property="pickedImaged" destination="GZm-Dz-F29" id="5dG-pP-Oyk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QQj-7x-21Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2402" y="116"/>
+            <point key="canvasLocation" x="2400.8000000000002" y="115.59220389805098"/>
         </scene>
         <!--Photo View Controller-->
         <scene sceneID="thf-TR-Fil">
